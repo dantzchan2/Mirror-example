@@ -12,7 +12,7 @@ public class Character : NetworkBehaviour
     [SerializeField] GameObject weapon;
     [SerializeField] Slider hpSlider;
     [SerializeField] public float maxHp = 100;
-    [SerializeField][SyncVar] public float hp = 100;
+    [SerializeField] [SyncVar] public float hp = 100;
 
     void Start()
     {
@@ -29,8 +29,10 @@ public class Character : NetworkBehaviour
 
     private void Update()
     {
-        hpSlider.value=hp;
-        if(hp <= 0) {
+        hpSlider.value = hp;
+
+        if (hp <= 0)
+        {
             Destroy(this);//safe?
         }
         if (!isLocalPlayer) return;
@@ -46,9 +48,27 @@ public class Character : NetworkBehaviour
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<Animator>().Play("swordSwing");
+            // hp -= 10;
+        }
+
     }
 
-    public void TakeDamage(float amt) {
+    // public void GiveDamage(GameObject target, float dmg)
+    // {
+    //     TargetGiveDamage(NetworkConnection target, dmg);
+    // }
+
+    // [TargetRpc]
+    // public void TargetGiveDamage(NetworkConnection target, float amt)
+    // {
+    //     TakeDamage(amt);
+    // }
+
+    public void TakeDamage(float amt)
+    {
         Debug.Log($"take {amt} damage!");
         hp -= amt;
     }

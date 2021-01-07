@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class Weapon : NetworkBehaviour
+public class Weapon : MonoBehaviour
 {
 
     [SerializeField] private float damage = 10;
-    [SerializeField] GameObject owner = null;
-  
+    // [SerializeField] GameObject owner = null;
+
+    void Start()
+    {
+        // owner = this.gameObject.transform.parent.transform.parent.gameObject;
+    }
     void OnTriggerEnter(Collider collider)
     {
         GameObject target = collider.gameObject;
-        if(target.name != "sword") {
-            TargetGiveDamage(target.transform.parent.GetComponent<NetworkConnection>(), damage);
+        if (target.name == "player_visual")
+        {
+            target.transform.parent.GetComponent<Character>().TakeDamage(damage);
+            // owner.GetComponent<Character>().GiveDamage(target.transform.parent, damage);
+            // TargetGiveDamage(target.transform.parent.GetComponent<NetworkConnection>(), );
         }
     }
 
-    [TargetRpc]
-    public void TargetGiveDamage(NetworkConnection target, float amt)
-    {
-        owner.GetComponent<Character>().TakeDamage(amt);
-    }
+
 }

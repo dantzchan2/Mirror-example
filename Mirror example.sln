@@ -21,9 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples.Cloud.Pong"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Authenticators", "Mirror.Authenticators.csproj", "{d2c1ba02-fb19-8555-efe9-0cb298c87c9e}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.example.RigidbodyPhysics", "Mirror.example.RigidbodyPhysics.csproj", "{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{39229cbd-17b0-9825-7da3-499e99771840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.example.RigidbodyPhysics", "Mirror.example.RigidbodyPhysics.csproj", "{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Weaver", "Mirror.Weaver.csproj", "{dbbac3f5-0fd7-fdfa-7678-38c534a14277}"
 EndProject
@@ -56,10 +56,10 @@ Global
 		{5e1b307e-1603-1414-dd35-ec0eb865e628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d2c1ba02-fb19-8555-efe9-0cb298c87c9e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d2c1ba02-fb19-8555-efe9-0cb298c87c9e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39229cbd-17b0-9825-7da3-499e99771840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39229cbd-17b0-9825-7da3-499e99771840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05a119d9-a2d4-075e-f578-2e7fc09c8e6b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{dbbac3f5-0fd7-fdfa-7678-38c534a14277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{dbbac3f5-0fd7-fdfa-7678-38c534a14277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ac9df4b2-0652-c284-e8df-af9a096835d5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

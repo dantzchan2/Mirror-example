@@ -16,14 +16,6 @@ ScriptsOnlyBuild:
     - kcp2k.KcpTransport
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -74,39 +66,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 11826}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 11904}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 12520}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 12618}
     - Class: 114
-      Script: {instanceID: 13552}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13204}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13232}
     - Class: 114
-      Script: {instanceID: 14282}
+      Script: {instanceID: 13802}
     - Class: 114
-      Script: {instanceID: 14288}
+      Script: {instanceID: 13808}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 13866}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 14070}
     - Class: 114
-      Script: {instanceID: 14672}
+      Script: {instanceID: 14198}
     - Class: 114
-      Script: {instanceID: 14774}
+      Script: {instanceID: 14302}
     - Class: 114
-      Script: {instanceID: 14812}
+      Script: {instanceID: 14340}
     - Class: 114
-      Script: {instanceID: 14876}
+      Script: {instanceID: 14404}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -126,6 +118,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 016664814c823cfc5ac199e835dc335b
@@ -590,12 +588,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
       Hash: 4c790fa3b7c93033baa4406ca5ac8c04
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.NetworkRoom
@@ -1047,4 +1039,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/scene.unity
-  playerPath: C:/Users/D-15/Documents/Mirror-example/Builds/Mirror example.exe
+  playerPath: C:/Users/leedongmin/Documents/Mirror example/Builds/Mirror example.exe

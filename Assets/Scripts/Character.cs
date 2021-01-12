@@ -39,14 +39,7 @@ public class Character : NetworkBehaviour
         float moveHorizontal = -Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = new Vector3(moveVertical, 0.0f, moveHorizontal);
-
-        if (movement != Vector3.zero)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
-        }
-
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        CmdMove(moveHorizontal, moveVertical);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -54,6 +47,19 @@ public class Character : NetworkBehaviour
             // hp -= 10;
         }
 
+    }
+    
+    [Command]
+    void CmdMove(float h, float v)
+    {
+        Vector3 movement = new Vector3(v, 0.0f, h);
+
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
+        }
+
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
     // public void GiveDamage(GameObject target, float dmg)

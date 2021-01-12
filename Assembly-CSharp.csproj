@@ -39,6 +39,8 @@
      <Compile Include="Assets\Scripts\HelathBar.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
+     <Compile Include="Assets\Scripts\CharacterSpawner.cs" />
+     <Compile Include="Assets\Scripts\EmptyController.cs" />
      <None Include="Assets\Mirror\Version.txt" />
      <None Include="Assets\Mirror\Readme.txt" />
      <None Include="Assets\Mirror\Notice.txt" />

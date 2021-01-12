@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Character
+    - CharacterSpawner
+    - EmptyController
     - HelathBar
     - Weapon
     Mirror.Components.dll:
@@ -19,18 +21,14 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -74,39 +72,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 11822}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 12520}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 13552}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13200}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13228}
     - Class: 114
-      Script: {instanceID: 14282}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 14288}
+      Script: {instanceID: 13804}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 13862}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 14066}
     - Class: 114
-      Script: {instanceID: 14672}
+      Script: {instanceID: 14194}
     - Class: 114
-      Script: {instanceID: 14774}
+      Script: {instanceID: 14398}
     - Class: 114
-      Script: {instanceID: 14812}
+      Script: {instanceID: 17832}
     - Class: 114
-      Script: {instanceID: 14876}
+      Script: {instanceID: 18410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -126,6 +124,18 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: 016664814c823cfc5ac199e835dc335b
@@ -590,12 +600,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
       Hash: 4c790fa3b7c93033baa4406ca5ac8c04
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.NetworkRoom
@@ -1010,12 +1014,6 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1044,6 +1042,18 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.dll
     namespaceName: kcp2k
     className: KcpTransport
+  - hash:
+      serializedVersion: 2
+      Hash: 43a628168cd85e7c355c046ad53ac68c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 6fd2bb55b3ee5edb6040a1c5bccd0e07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EmptyController
   platform: 5
   scenePathNames:
   - Assets/Scenes/scene.unity

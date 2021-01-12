@@ -13,7 +13,7 @@ public class Character : NetworkBehaviour
     [SerializeField] Slider hpSlider;
     [SerializeField] public float maxHp = 100;
     [SerializeField] [SyncVar] public float hp = 100;
-
+    
     void Start()
     {
         if (base.isClient && base.hasAuthority)
@@ -35,7 +35,7 @@ public class Character : NetworkBehaviour
         {
             Destroy(this);//safe?
         }
-        if (!isLocalPlayer) return;
+        if (!base.isClient || !base.hasAuthority) return;
         float moveHorizontal = -Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 

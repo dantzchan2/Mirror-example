@@ -13,7 +13,8 @@ public class CharacterSpawner : NetworkBehaviour
     [Command]
     void CmdSpawn()
     {
-        GameObject obj = Instantiate(character[Random.Range(0,2)], new Vector3(0,0,0), Quaternion.identity);
+        Transform t = SPNetworkManager.singleton.GetStartPosition();
+        GameObject obj = Instantiate(character[Random.Range(0,2)], t.position, t.rotation);
         NetworkServer.Spawn(obj, this.gameObject);
     }
 }

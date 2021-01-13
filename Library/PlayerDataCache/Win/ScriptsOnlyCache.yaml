@@ -74,37 +74,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11806}
     - Class: 114
-      Script: {instanceID: 11900}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 11902}
     - Class: 114
       Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 12094}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 13070}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 13200}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13228}
+      Script: {instanceID: 13204}
     - Class: 114
-      Script: {instanceID: 13798}
+      Script: {instanceID: 13232}
     - Class: 114
-      Script: {instanceID: 13804}
+      Script: {instanceID: 13802}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13808}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 13866}
     - Class: 114
-      Script: {instanceID: 14194}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14398}
+      Script: {instanceID: 14072}
     - Class: 114
-      Script: {instanceID: 17832}
+      Script: {instanceID: 14200}
     - Class: 114
-      Script: {instanceID: 18410}
+      Script: {instanceID: 14404}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -136,6 +136,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Slider
+  - hash:
+      serializedVersion: 2
+      Hash: 43a628168cd85e7c355c046ad53ac68c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterSpawner
   - hash:
       serializedVersion: 2
       Hash: 016664814c823cfc5ac199e835dc335b
@@ -172,6 +178,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.dll
     namespaceName: Mirror
     className: NetworkManagerHUD
+  - hash:
+      serializedVersion: 2
+      Hash: b2b4a4bf81317f3c08703a1773162a08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPNetworkManager
   - hash:
       serializedVersion: 2
       Hash: 192ca9716d03752ea1d90a78bc2daac9
@@ -852,6 +864,12 @@ ScriptsOnlyBuild:
     className: NetworkDiscoveryHUD
   - hash:
       serializedVersion: 2
+      Hash: 6fd2bb55b3ee5edb6040a1c5bccd0e07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EmptyController
+  - hash:
+      serializedVersion: 2
       Hash: e6b0b783ea73cf405c717cd9b89fbd7c
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
@@ -1042,18 +1060,6 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.dll
     namespaceName: kcp2k
     className: KcpTransport
-  - hash:
-      serializedVersion: 2
-      Hash: 43a628168cd85e7c355c046ad53ac68c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CharacterSpawner
-  - hash:
-      serializedVersion: 2
-      Hash: 6fd2bb55b3ee5edb6040a1c5bccd0e07
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EmptyController
   platform: 5
   scenePathNames:
   - Assets/Scenes/scene.unity

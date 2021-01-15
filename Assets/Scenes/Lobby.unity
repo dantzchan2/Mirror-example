@@ -1325,7 +1325,7 @@ MonoBehaviour:
   landingPagePanel: {fileID: 442850699}
   ipAddressInputField: {fileID: 2050758910}
   joinButton: {fileID: 1990488708}
-  closeButton: {fileID: 0}
+  closeButton: {fileID: 598021372}
 --- !u!1 &914601284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,18 +2048,19 @@ MonoBehaviour:
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: 
-  onlineScene: Assets/Scenes/Lobby.unity
+  onlineScene: 
   transport: {fileID: 1421213524}
   networkAddress: localhost
   maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6141337878118111103, guid: ffe817bab00866943b9fef9cc8f68871, type: 3}
-  autoCreatePlayer: 1
+  playerPrefab: {fileID: 6819995000910074031, guid: de7a09229ba2c4d45881fe9c0e6ccbeb, type: 3}
+  autoCreatePlayer: 0
   playerSpawnMethod: 0
   spawnPrefabs: []
-  menuScene: 
+  minPlayers: 2
+  menuScene: Assets/Scenes/Lobby.unity
   roomPlayerPrefab: {fileID: 6141337878118111102, guid: ffe817bab00866943b9fef9cc8f68871, type: 3}
 --- !u!1 &1529265316
 GameObject:

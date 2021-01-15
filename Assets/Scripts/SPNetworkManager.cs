@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 public class SPNetworkManager : NetworkManager
 {
+    [SerializeField] private int minPlayers = 2;
     [Scene] [SerializeField] private string menuScene = string.Empty;
 
     [Header("Room")]
@@ -17,20 +18,28 @@ public class SPNetworkManager : NetworkManager
     public static event Action<NetworkConnection> OnServerReadied;
     public static event Action OnServerStopped;
 
+    public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
+
     public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("NetworkPrefabs").ToList();
 
     public override void OnStartClient()
     {
         var spawnablePrefabs = Resources.LoadAll<GameObject>("NetworkPrefabs");
 
-        foreach( var prefab in spawnablePrefabs) {
+        foreach (var prefab in spawnablePrefabs)
+        {
             ClientScene.RegisterPrefab(prefab);
         }
     }
 
     public override void OnClientConnect(NetworkConnection conn)
     {
-        base.OnClientConnect(conn);
+        // base.OnClientConnect(conn);
+        if (!clientLoadedScene)
+        {
+            if (!ClientScene.ready) ClientScene.Ready(conn);
+            ClientScene.AddPlayer(conn);
+        }
         OnClientConnected?.Invoke();
     }
     public override void OnClientDisconnect(NetworkConnection conn)
@@ -40,20 +49,42 @@ public class SPNetworkManager : NetworkManager
     }
     public override void OnServerConnect(NetworkConnection conn)
     {
-        if(numPlayers >= maxConnections) {
+        if (numPlayers >= maxConnections)
+        {
             conn.Disconnect();
             return;
         }
-
-        if(SceneManager.GetActiveScene().name != menuScene) {
+        if (SceneManager.GetActiveScene().path != menuScene)
+        {
             conn.Disconnect();
             return;
         }
     }
+
+    public override void OnServerDisconnect(NetworkConnection conn)
+    {
+        if (conn.identity != null)
+        {
+            var player = conn.identity.GetComponent<NetworkRoomPlayerLobby>();
+
+            RoomPlayers.Remove(player);
+
+            NotifyPlayersOfReadyState();
+        }
+        base.OnServerDisconnect(conn);
+    }
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        if(SceneManager.GetActiveScene().name == menuScene) {
+        Debug.Log("OnServerAddPlayer");
+
+        if (SceneManager.GetActiveScene().path == menuScene)
+        {
+            bool isLeader = RoomPlayers.Count == 0;
+
             NetworkRoomPlayerLobby roomplayerInstance = Instantiate(roomPlayerPrefab);
+
+            roomplayerInstance.IsLeader = isLeader;
+
             NetworkServer.AddPlayerForConnection(conn, roomplayerInstance.gameObject);
         }
     }
@@ -61,7 +92,25 @@ public class SPNetworkManager : NetworkManager
     public override void OnStopServer()
     {
         OnServerStopped?.Invoke();
+        RoomPlayers.Clear();
     }
 
+    public void NotifyPlayersOfReadyState()
+    {
+        foreach (var player in RoomPlayers)
+        {
+            player.HandleReadyToStart(IsReadyToStart());
+        }
+    }
+
+    private bool IsReadyToStart()
+    {
+        if (numPlayers < minPlayers) return false;
+        foreach (var player in RoomPlayers)
+        {
+            if (!player.IsReady) return false;
+        }
+        return true;
+    }
 
 }

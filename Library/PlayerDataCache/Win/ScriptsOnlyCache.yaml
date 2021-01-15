@@ -1,20 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Character
-    - CharacterSpawner
-    - EmptyController
-    - HelathBar
-    - Weapon
-    Mirror.Components.dll:
-    - Mirror.NetworkAnimator
-    - Mirror.NetworkTransform
-    - Mirror.NetworkTransformChild
+    - JoinLobbyMenu
+    - MainMenu
+    - NetworkRoomPlayerLobby
+    - PlayerNameInput
+    - SPNetworkManager
     Mirror.dll:
     - Mirror.NetworkIdentity
-    - Mirror.NetworkManager
-    - Mirror.NetworkManagerHUD
-    - Mirror.NetworkStartPosition
     - kcp2k.KcpTransport
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -29,12 +22,16 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Slider
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/scene.unity:
+    Assets/Scenes/Lobby.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -43,73 +40,49 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11792}
-    - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 11790}
     - Class: 114
       Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11902}
+      Script: {instanceID: 11934}
     - Class: 114
-      Script: {instanceID: 12036}
-    - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 12056}
     - Class: 114
       Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12386}
     - Class: 114
-      Script: {instanceID: 13204}
+      Script: {instanceID: 12622}
     - Class: 114
-      Script: {instanceID: 13232}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13802}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13808}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13866}
+      Script: {instanceID: 13574}
     - Class: 114
-      Script: {instanceID: 13960}
+      Script: {instanceID: 13814}
     - Class: 114
-      Script: {instanceID: 14072}
+      Script: {instanceID: 13878}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 14316}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 14416}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 136
-      Script: {instanceID: 0}
-    - Class: 143
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -180,7 +153,7 @@ ScriptsOnlyBuild:
     className: NetworkManagerHUD
   - hash:
       serializedVersion: 2
-      Hash: b2b4a4bf81317f3c08703a1773162a08
+      Hash: 314d486a236b0b7bf08481403e4ec444
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SPNetworkManager
@@ -396,6 +369,12 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
+      Hash: e38ce02c3f0ec58d072ba49adb0b926b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerNameInput
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -412,6 +391,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0f1630513cc66b78105bbe382d543f51
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoundSystem
   - hash:
       serializedVersion: 2
       Hash: 192ca9716d03752ea1d90a78bc2daac9
@@ -492,6 +477,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 6fd2bb55b3ee5edb6040a1c5bccd0e07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SPGameManager
+  - hash:
+      serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -532,6 +523,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: f2a7ee61b69ab4ecf4cb2c5492f7e631
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkRoomPlayerLobby
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -744,6 +741,12 @@ ScriptsOnlyBuild:
     className: ApiUpdater
   - hash:
       serializedVersion: 2
+      Hash: 23bc2f106a622122bb8e52ae96959ef8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoinLobbyMenu
+  - hash:
+      serializedVersion: 2
       Hash: f3a8ccc18ad656ac8993b34a1b30984f
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
@@ -772,6 +775,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 7c6229601625ee09040cae6b8c6f6cfc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: ce58790f4b80db4732075fa2fb5e1bf9
@@ -1062,5 +1071,5 @@ ScriptsOnlyBuild:
     className: KcpTransport
   platform: 5
   scenePathNames:
-  - Assets/Scenes/scene.unity
+  - Assets/Scenes/Lobby.unity
   playerPath: C:/Users/D-15/Documents/Mirror-example/Builds/Mirror example.exe

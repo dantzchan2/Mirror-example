@@ -38,16 +38,19 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterSpawner.cs" />
      <Compile Include="Assets\Scripts\SPNetworkManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerNameInput.cs" />
+     <Compile Include="Assets\Scripts\RoundSystem.cs" />
+     <Compile Include="Assets\Scripts\SPGameManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkRoomPlayerLobby.cs" />
      <Compile Include="Assets\Scripts\HelathBar.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\JoinLobbyMenu.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\EmptyController.cs" />
-     <Compile Include="Assets\Scripts\SPGameManager.cs" />
-     <Compile Include="Assets\Scripts\RoundSystem.cs" />
-     <Compile Include="Assets\Scripts\PlayerNameInput.cs" />
-     <Compile Include="Assets\Scripts\NetworkRoomPlayerLobby.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\JoinLobbyMenu.cs" />
+     <Compile Include="Assets\Scripts\SPPlayerSpawnSystem.cs" />
+     <Compile Include="Assets\Scripts\SPPlayerSpawnPoint.cs" />
+     <Compile Include="Assets\Scripts\NetworkGamePlayerLobby.cs" />
      <None Include="Assets\Mirror\Version.txt" />
      <None Include="Assets\Mirror\Readme.txt" />
      <None Include="Assets\Mirror\Notice.txt" />

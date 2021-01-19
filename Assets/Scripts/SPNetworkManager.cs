@@ -13,12 +13,16 @@ public class SPNetworkManager : NetworkManager
     [Header("Room")]
     [SerializeField] private NetworkRoomPlayerLobby roomPlayerPrefab = null;
 
+    [Header("Game")]
+    [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
+    [SerializeField] private GameObject playerSpawnSystem = null;
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
     public static event Action<NetworkConnection> OnServerReadied;
     public static event Action OnServerStopped;
 
     public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
+    public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
 
     public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("NetworkPrefabs").ToList();
 
@@ -75,7 +79,6 @@ public class SPNetworkManager : NetworkManager
     }
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        Debug.Log("OnServerAddPlayer");
 
         if (SceneManager.GetActiveScene().path == menuScene)
         {
@@ -113,4 +116,30 @@ public class SPNetworkManager : NetworkManager
         return true;
     }
 
+    public override void OnServerReady(NetworkConnection conn)
+    {
+        base.OnServerReady(conn);
+        OnServerReadied?.Invoke(conn);
+    }
+
+    public override void OnServerSceneChanged(string sceneName)
+    {
+        // base.OnServerSceneChanged(sceneName);
+        if (sceneName.StartsWith("ingame_"))
+        {
+            GameObject playerSpawnSysInstance = Instantiate(playerSpawnSystem);
+            NetworkServer.Spawn(playerSpawnSysInstance);
+        }
+    }
+
+    public void StartGame()
+    {
+        Debug.Log($"start gaem {SceneManager.GetActiveScene().path}");
+        if (SceneManager.GetActiveScene().path == menuScene)
+        {
+            if (!IsReadyToStart()) { return; }
+
+            ServerChangeScene("ingame_scene");
+        }
+    }
 }

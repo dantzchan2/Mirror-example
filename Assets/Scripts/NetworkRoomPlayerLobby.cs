@@ -96,19 +96,22 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     }
 
     [Command]
-    private void CmdSetDisplayName(string displayName) {
+    private void CmdSetDisplayName(string displayName)
+    {
         DisplayName = displayName;
     }
 
     [Command]
-    public void CmdReadyUp() {
+    public void CmdReadyUp()
+    {
         IsReady = !IsReady;
         Room.NotifyPlayersOfReadyState();
     }
 
     [Command]
-    public void CmdStartGame() {
-        if(Room.RoomPlayers[0].connectionToClient != connectionToClient) return;
-        // START!
+    public void CmdStartGame()
+    {
+        if (Room.RoomPlayers[0].connectionToClient != connectionToClient) return;
+        Room.StartGame();
     }
 }

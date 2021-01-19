@@ -142,4 +142,25 @@ public class SPNetworkManager : NetworkManager
             ServerChangeScene("ingame_scene");
         }
     }
+
+    public override void ServerChangeScene(string newSceneName)
+        {
+            // From menu to game
+            if (SceneManager.GetActiveScene().name == menuScene && newSceneName.StartsWith("ingame_scene"))
+            {
+                for (int i = RoomPlayers.Count - 1; i >= 0; i--)
+                {
+                    var conn = RoomPlayers[i].connectionToClient;
+                    var gameplayerInstance = Instantiate(gamePlayerPrefab);
+                    gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+
+
+                    NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject);
+                    NetworkServer.Destroy(conn.identity.gameObject);
+
+                }
+            }
+
+            base.ServerChangeScene(newSceneName);
+        }
 }

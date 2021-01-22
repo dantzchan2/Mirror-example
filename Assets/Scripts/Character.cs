@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class Character : NetworkBehaviour
 {
     bool canPlayerMove = true;
@@ -13,7 +15,7 @@ public class Character : NetworkBehaviour
     [SerializeField] Slider hpSlider;
     [SerializeField] public float maxHp = 100;
     [SerializeField] [SyncVar] public float hp = 100;
-    
+
     void Start()
     {
         if (base.isClient && base.hasAuthority)
@@ -33,14 +35,19 @@ public class Character : NetworkBehaviour
 
         if (hp <= 0)
         {
-            Destroy(this);//safe?
+            // Destroy(this);//safe?
+            NetworkServer.Destroy(this.gameObject);
+            // SPNetworkManager.singleton.
+            // NetworkServer.RemovePlayerForConnection()
+            if (base.isClient && base.hasAuthority)
+                SceneManager.LoadScene("Lobby");
         }
         if (!base.isClient || !base.hasAuthority) return;
         float moveHorizontal = -Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
         // CmdMove(moveHorizontal, moveVertical);
-        
+
         Vector3 movement = new Vector3(moveVertical, 0.0f, moveHorizontal);
 
         if (movement != Vector3.zero)
@@ -57,7 +64,7 @@ public class Character : NetworkBehaviour
         }
 
     }
-    
+
     [Command]
     void CmdMove(float h, float v)
     {
